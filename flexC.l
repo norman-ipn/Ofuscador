@@ -7,8 +7,7 @@
 #include <stdio.h>
 /* Declaramos de manera global nuestro apuntador a archivo, para que pueda ser usado por las demas funciones */
 FILE *archivoOfuscado;
-/* Bandera para contar las lineas */
-int i = 0;
+
 %}
 
 /*	Definimos las expresiones regulares que serviran para identificar
@@ -98,7 +97,7 @@ COMENTARIOS {COMENTARIOS_UNALINEA}|{COMENTARIOS_CONTINUACION}
 		fprintf(archivoOfuscado,"&nbsp;");
 	}
 
-.           printf( "Linea %d: %s\n",i ,yytext );
+.           { }
 
 %%
 
@@ -112,7 +111,7 @@ int main( int argc, char **argv )
 		if ( argc > 1 ){
 			/* Lector de la entrada */
 			yyin = fopen( argv[0], "r" );
-			/* Abrimos(creamos) el archivo sobre el cual vamos a escribir nuestro codigo html */
+			/* Abrimos(creamos) el archivo sobre el cual vamos a escribir nuestro codigo ofuscado */
 			archivoOfuscado = fopen(argv[1], "w");
 			
 			if(archivoOfuscado == NULL){
@@ -122,7 +121,7 @@ int main( int argc, char **argv )
 			/* Llamamos a la funcion que ejecuta el codigo que nos entrega Flex */
 			yylex();
 		
-			/* Terminamos el archivo html y lo cerramos */
+			/* Terminamos el archivo ofuscado y lo cerramos */
 	
 			fclose(archivoOfuscado);
 		}	

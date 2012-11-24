@@ -1,10 +1,10 @@
 /* @fferegrino */
 /** DEFINICIONES DE C O FLEX **/
 %{
-/* stdio.h para lectura de archivos, strings.h para manejo de cadenas*/
+/* stdio.h para lectura de archivos, string.h para manejo de cadenas*/
 #include <math.h>
 #include <stdio.h>
-#include <stdio.h>
+#include <string.h>
 /* Declaramos de manera global nuestro apuntador a archivo, para que pueda ser usado por las demas funciones */
 FILE *archivoOfuscado;
 
@@ -55,10 +55,7 @@ COMENTARIOS {COMENTARIOS_UNALINEA}|{COMENTARIOS_CONTINUACION}
 		
 {LIBS}	{
 	/* Para el texto despues del #define: <stdio.h> */
-	/* Requiere un poco mas de trabajo ya que < y > son apertura y cierre de los tags de html,
-	 * los removemos y en su lugar los sustituimos por &lt; y &gt; que son entidades validas
-	 * para representar estos valores en HTML
-	 */
+
 	}
 {KEYWORDS}	{/*PALABRAS RESERVADAS*/ 
 			
@@ -85,17 +82,8 @@ COMENTARIOS {COMENTARIOS_UNALINEA}|{COMENTARIOS_CONTINUACION}
 [\t]
 
 [\n]	{
-		/* Salto de linea */
-		
+		/* Salto de linea */	
 	}     
-
-" "	{
-	/* Espacio vacio */
-	/* En html, el espacio vacio " ", es no es representable por si mismo, se requiere el uso de
-	 * una entidad html, la cual es: &nbsp;
-	 */
-		fprintf(archivoOfuscado,"&nbsp;");
-	}
 
 .           { }
 

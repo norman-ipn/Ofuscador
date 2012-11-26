@@ -15,9 +15,9 @@ int d_3() {
 }
 
 int c_4() {
-    return (d_3() * c_5());
+    return (d_3() * c_5()) * (i_t + i_t);
 }
 
 int c_5() {
-    return ((u_2() + u_2() + u_2() + u_2() + u_2()) + c_1());
+    return (((i_t) * (i_t)) / (i_t)) + (((i_t) * (i_t)) / (i_t)) + (((i_t) * (i_t)) / (i_t)) + (((i_t) * (i_t)) / (i_t)) + (((i_t) * (i_t)) / (i_t)); 
 }

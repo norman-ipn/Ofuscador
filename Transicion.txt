@@ -1,0 +1,18 @@
+Original							Ofuscado
+
+Bool a, b, c						Short a1, a2, a3, b1, b2, c1, c2
+a = true, b = false, c = true		a1 = a2=a3 = true, ……..
+c = a & b							c1 = ( (a1 ^ a2 ) ^ a3) & ( b1 ^ b2)
+									c2 = c1
+									
+String t = “Net”					String retStr(int i)
+									{ string s;
+									s[1] = “N”;
+									s[2] = “e”;
+									s[3] = “t”;}
+
+For ( i = 1; i<= 10; i++)			Int B[50]
+A[i] = I;							For (i=10; i>= 1; i--)
+									{    A[i] = I;
+									B[i] += B[i*i/2];}
+

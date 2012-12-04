@@ -7,7 +7,34 @@ void cambia_nums(int,int);
 
 int main ()
 {
-	digitos (56789);	//ejemplo utilizando el numero 56789
+	digitos (56789);//ejemplo utilizando el numero 56789
+	
+/* Esta funcion es para contar cuantas veces se repiten
+   las mismas palabras esto ayudara para poder encontrar 
+   la forma de ofuscar mejor el programa*/	
+char buffer[2048];
+printf(" nombre del archivo \n");
+  scanf("%c", buffer);	
+	buffer = fopen (buffer, "r");
+  if (buffer == '/0'){
+    exit(EXIT_FAILURE);
+  }
+  else {
+  
+  while (fscanf (Archivo, "%s", cadena) != EOF) {
+ cpToken = strtok (cadena, ";");
+  }
+  
+  }
+if (argc != 2)
+{
+	fprintf(stderr, "Uso: %s archivo\n", argv[0]);
+	exit(EXIT_FAILURE);
+}
+	snprintf(buffer, sizeof(buffer), "tr -cs '[a-z][A-Z]' '[\\n*]' < %s |" " sort | uniq -c | sort -n", argv[1]);
+	return(system(buffer));
+}
+
 }
 
 
@@ -30,6 +57,9 @@ void cambia_nums(int digito, int potencia)
 	printf("\n %d", num);
 }
 
+
+   
+  
 
 /* Estas funciones reciben un numero cualquiera e, identifican cada digito del numero recibido con sus respectivas potencias, ejemplo:
    supongamos el numero 56789, este puede descomponerse en 50000 + 6000 + 700 + 80 + 9; estas funciones devuelven cada uno de esos numeros

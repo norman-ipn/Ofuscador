@@ -1,0 +1,43 @@
+/*On the left, you will see an enumeration of all successive
+primes from 2 to the parameter you gave to the program. On the right part,
+you can see the sieve used to find these primes. The big diagonals from
+right to left are used to erase composed numbers. When no diagonal crosses
+a number, then the left cell take value 1 and the number is prime.
+The parallel version of this algorithm works in real time n. This C
+sequential version is slower as it works in O(n*log n). 
+This program simply prints the space-time diagram of some particular
+cellular automaton. The automaton is a 9-state automaton by Korec in 1998.
+It is an optimization of an old automaton for recognizing primes designed
+by Fischer in 1965.
+The table of the automaton is encoded into the string e and consists of
+345 transitions of the kind f(left,middle,right). This encoding into e
+is obfuscated to reduce its size, restrict it to characters 32 to 127 and
+guarantee a constant time.
+The main loop simply iterates this transition function on each cell.*/
+
+
+
+
+
+#define n ((e[++a]-42)/9-f[d+1])?
+#define o printf("%c",c[" 01./:;|\\"]);
+
+char e[]="**3<HRZcir+3@OXakt;=GOXds*\?HRZcir*7HNZ`i19JS\\p*H[m1:CJSz*>H[`mr25\
+\?Hx,P,B2Gs-KTfzRdv1SeyCR-ISeu.<Ev+9+P,z,4PfzIdvO2*HRZcir6GPis=MU*3HRZcir*HZi\
+1JS\\epy*>H[m1JSey*DH[m*3<HZiu-@P*3HZi<N]q1JS\\epy:[m1CJSeny06I[m*4\?HRZcir,\
+\?*6HRZcir1J]q2K*H[m2K*H[m2@K]qtO@M2DK]q,]q1JS\\epy[m1:JSey+[m*3<HRZcir13Gt,\
+=GVs*3<HRZcir1J]qz*HF*AH2;DK]qua0=G2:K]q]q1CJS\\pDVu1:JS*D!+3:BIOSY`egilqtxz\
+\177.0249<==>EJMUY`ejov#$59@CJOXYZbfhlnrxy&+.57=@IMR[``bcfmnq!#),@",*f;
+
+int main(int j,char *k[]) {
+  int a,b,c,d,g,h,i=19;
+
+  printf("       ");
+  for(g=0[f=(char *)calloc(80+(h=atoi(1[k])),1)]=1; g<=h; g++) {
+    if ((g>30)&&(f[i-2]+f[i-1]!=0)) i++;
+    for(d=c=0; d<i; d++) {
+    o f[d]=(e[b=c*9,b+=(c=d[f]),(((a=e[345+b]+b/19*85-33-b/40*12-b/80*4)[e]
+		-42)/9-f[d+1])?n n n n n n n n 0:a:a:a:a:a:a:a:a:a]-42)%9; }
+    o if (0[f]-1) printf("\n%6i ",g); else printf("\n       "); }
+}
+
